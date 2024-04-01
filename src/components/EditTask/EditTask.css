@@ -1,0 +1,127 @@
+/* TaskList.css */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    height: 98vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* .container{
+    margin-top: 5%;
+} */
+
+.task-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.task-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: calc(33.33% - 20px);
+    box-sizing: border-box;
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+.task-item h4 {
+    margin-top: 0;
+    color: #333;
+}
+
+.task-item p {
+    color: #555;
+}
+
+.priority {
+    color: #e44d26;
+    font-weight: bold;
+}
+
+.actions {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.icons {
+    cursor: pointer;
+    font-size: 20px;
+    color: #333;
+}
+
+.icons:hover {
+    color: #e44d26;
+}
+
+.pagination {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pagination-button {
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border: none;
+    background-color: #e44d26;
+    color: #fff;
+    border-radius: 4px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.pagination-button:hover {
+    background-color: #333;
+}
+
+.pagination-button:disabled {
+    cursor: not-allowed;
+    background-color: #ddd;
+    color: #999;
+}
+
+.page-info {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Media Query for Mobile Responsiveness */
+@media (max-width: 768px) {
+    .task-item {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .task-item {
+        width: 100%;
+    }
+
+    .pagination {
+        width: 100%;
+    }
+
+    .pagination-button {
+        width: 30%;
+    }
+
+    .page-info {
+        width: 30%;
+    }
+}

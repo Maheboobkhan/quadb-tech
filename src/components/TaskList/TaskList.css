@@ -1,0 +1,184 @@
+/* TaskList.css */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.task-list {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.task-list-heading{
+    color: #e44d26;
+    font-size: 40px;
+}
+
+.no-task-found-btn{
+    font-size: 20px;
+    color: #e44d26;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.task-list-container{
+    height: 60vh;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    /* border: 1px solid red; */
+    overflow-y: auto;
+}
+
+.task-item {
+    height: 230px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: calc(33.33% - 20px);
+    box-sizing: border-box;
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+}
+
+.task-item-container{
+    height: 90%;
+    overflow-y: auto;
+}
+
+.task-item:hover {
+    transform: scale(1.05);
+}
+
+.task-item h4 {
+    margin-top: 0;
+    color: #333;
+}
+
+.task-item p {
+    color: #555;
+}
+
+.priority {
+    color: #e44d26;
+    font-weight: bold;
+}
+
+.actions {
+    width: 15%;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding-bottom: 5px;
+    padding-left: 10px;
+}
+
+.mark-done{
+    position: absolute;
+    bottom: -10px;
+    right: 0;
+    padding: 4px 6px;
+    cursor: pointer;
+    background-color: lightgray;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.mark-done:hover{
+    color: #f26845;
+}
+
+.icons{
+    cursor: pointer;
+    font-size: 20px;
+    color: #333;
+    
+}
+
+.icons:hover {
+    color: #e44d26;
+}
+
+.pagination {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pagination-button {
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border: none;
+    background-color: #e44d26;
+    color: #fff;
+    border-radius: 4px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.pagination-button:hover {
+    background-color: #333;
+}
+
+.pagination-button:disabled {
+    cursor: not-allowed;
+    background-color: #ddd;
+    color: #999;
+}
+
+.page-info {
+    font-size: 14px;
+    color: #555;
+}
+
+.completed{
+    color: green;
+    background: none;
+    text-decoration: line-through;
+    position: absolute;
+    bottom: -10px;
+    right: 0;
+    padding: 4px 6px;
+    cursor: pointer;
+    background-color: lightgray;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+/* Media Query for Mobile Responsiveness */
+@media (max-width: 768px) {
+    .task-item {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .task-item {
+        width: 100%;
+    }
+
+    .pagination{
+        width: 100%;
+    }
+
+    .pagination-button{
+        width: 30%;
+    }
+
+    .page-info{
+        width: 30%;
+    }
+}
